@@ -160,6 +160,11 @@
 	
 - 如果没有使用git rm  删除工作区的文件
 	
+	为了删除暂存区的文件 git rm fileName
+	
+- 文件修改了 并且 提交暂存区了 的删除
+
+	git rm -f fileName=======
 	同时希望将工作区的删除状态同步到暂存区
 
 	$ git rm fileName
@@ -188,5 +193,146 @@
 
 
 #### 2.3 查看提交历史
+
+- git log
+
+- git log -p 
+
+	-p 显示出每次提交所引入的差异
+
+- git log -n
+
+	-n 显示前n次提交历史
+
+- git log --stat
+
+	查看每个提交的简要统计信息
+
+- git log --pertty
+
+	--oneline	一行显示一个提交
+
+	--graph     用ASCII字符形式的简单图表来显示Git分支和合并历史
+
+	--short
+
+	--full
+
+	--fuller
+
+
+#### 2.4 撤销操作
+
+- git commit -amend
+	
+- 撤销已暂存的文件
+	
+	$ git reset HEAD fileName
+	
+
+- 撤销对工作区文件的修改
+
+	$ git checkout -- fileName
+
+
+#### 2.5 远程仓库的使用
+
+
+##### 2.5.1 显示远程仓库
+
+	$ git remote
+	
+	$ git remote -v
+	显示远程仓库对应的URL
+	
+##### 2.5.2 添加远程仓库
+
+	$ git remote add [shortName] [url]
+
+##### 2.5.3 从远程仓库获取和拉取数据
+
+	$ git fetch [remote-name]
+	
+	fetch 只会把数据拉取到本地仓库 不会合并到本地数据
+	
+	
+	$ git pull [remote-name]
+	
+	pull 自动获取远程数据 并将远程分支合并入当前本地分支
+	
+
+##### 2.5.4 将数据推送到远程仓库
+
+	$ git fetch [remote-name] [branch-name]
+	
+##### 2.5.5 检查远程仓库
+	
+	$ git remote show [remote-name]
+	
+##### 2.5.6 删除和重命名远程仓库
+
+- 重命名远程仓库
+	
+	$ git remote rename new old
+	
+- 删除远程仓库
+	
+	$ git remote rm remote-name
+
+
+	
+#### 2.6 标记
+
+	Git可以把特定的历史版本标记为重要版本
+	
+
+
+##### 2.6.1 列举标签
+
+	$ git tag
+	
+	$ git tag -l "v1.8" 
+	列举特定版本
+	
+##### 2.6.2 创建标签
+
+	Git使用的标记主要有两种类型:
+		
+		* 轻量 lightweight 标签
+		
+		* 注释 annotated   标签
+		
+- 轻量标签
+	
+	是一个不变的分支
+	
+	只是一个指向某次提交的指针
+	
+- 注释标签
+	
+	会作为完整的对象存储在Git数据库中
+
+##### 2.6.3 注释标签
+
+	$ git tag -a versionNumber -m "message"
+	
+	$ git show versionNumber
+
+
+##### 2.6.4 轻量标签
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
