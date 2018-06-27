@@ -321,14 +321,41 @@
 
 ##### 2.6.4 轻量标签
 
+	$ git tag -a versionNumber
+	
+	$ git show versionNumber
+	显示标签的信息
 
+##### 2.6.5 补加标签
+	
+	$ git log --pretty=oneline
 
+	$ git tag -a versionNumber   版本ID
 
+##### 2.6.6 共享标签
+	
+	默认情况 git push不会吧标签传输带服务器上 
+	
+	在创建标签之后 必须将标签推送到服务器上 有点像推送分支
+	
+	$ git push remote-name tagName
+	
+	
+	$ git push remote-name --tags
+	将很多标签一次推送服务器
+	
 
+##### 2.6.7 检出标签
+	
+	标签无法移动
+	
+	$ git checkout -b [branchname] [tagname]
+	在特定标签上创建一个新的分支
+	
+	
+#### 2.6 Git别名
 
-
-
-
+	$ git config --global alias.shortName  command
 
 
 
