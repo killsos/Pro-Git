@@ -136,4 +136,57 @@
 	
 	查看暂存区 与 历史区 的区别
 	
-fdsafdas
+##### 2.2.7 提交变更
+
+- git commit 
+	
+	会打开默认编辑器
+	
+- git commit -m "message"
+
+##### 2.2.8 跳过暂存区
+
+	$ git commit -a -m "message"
+	
+	注意 修改文件必须提交过一次 新文件这个命令不可以
+	
+##### 2.2.9 移除文件
+	
+- git rm fileName
+	
+	* 可以删除暂存区的文件
+	
+	* 可以删除工作区的文件 删除了工作区的文件同时也删除了暂存区的文件
+	
+- 如果没有使用git rm  删除工作区的文件
+	
+	同时希望将工作区的删除状态同步到暂存区
+
+	$ git rm fileName
+
+- 更改了文件 并已经加入到暂存区 删除该文件
+
+	$ git rm -f fileName
+
+	加 -f 为了防止没有被记录到快照中的数据被意外移除而设立的安全特性
+
+- 保留工作区的文件 只删除暂存区的文件
+
+	$ git rm --cached fileName
+
+##### 2.2.10 移动文件/重命名文件
+
+	$ git mv file_from file_to
+
+	===
+
+	$ mv file_from file_to
+
+	$ git rm file_from
+
+	$ git add file_to
+
+
+#### 2.3 查看提交历史
+
+
